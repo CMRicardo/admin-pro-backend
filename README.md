@@ -18,4 +18,5 @@ cp .template.env .env
 ```sh
 npm run dev
 ```
-> [!NOTE] We use node watch mode which requires node 18 or above
+> [!NOTE]
+> We use node watch mode which requires node 18 or above
