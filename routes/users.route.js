@@ -3,10 +3,11 @@ import { check } from 'express-validator'
 
 import { createUser, deleteUser, getUsers, updateUser } from '../controllers/users.controller.js'
 import { validateFields } from '../middlewares/validate-fields.js'
+import { validateJWT } from '../middlewares/validate-jwt.js'
 
 export const usersRouter = Router()
 
-usersRouter.get('/', getUsers)
+usersRouter.get('/', [validateJWT], getUsers)
 usersRouter.post(
   '/',
   [
@@ -20,6 +21,7 @@ usersRouter.post(
 usersRouter.put(
   '/:id',
   [
+    validateJWT,
     check('name', 'Name is required').notEmpty(),
     check('email', 'Email is required').notEmpty().isEmail(),
     check('role', 'Role is required').notEmpty(),
@@ -27,4 +29,4 @@ usersRouter.put(
   ],
   updateUser
 )
-usersRouter.delete('/:id', deleteUser)
+usersRouter.delete('/:id', [validateJWT], deleteUser)

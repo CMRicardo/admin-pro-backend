@@ -8,7 +8,8 @@ export const getUsers = async (req, res) => {
   const users = await User.find({}, 'name email google role img')
   res.json({
     ok: true,
-    users
+    users,
+    uid: req.uid
   })
 }
 
