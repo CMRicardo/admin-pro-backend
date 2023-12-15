@@ -6,7 +6,17 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-  "name": "Ricardo",
-  "email": "ricardo@email.com",
+  "name": "daniel",
+  "email": "daniel@email.com",
   "password": "123456"
+}
+### Update user
+PUT http://localhost:3000/api/users/657cb15d170bb16543f9ccb3
+Content-Type: application/json
+
+{
+  "name": "Ricardo",
+  "email": "daniel@email.com",
+  "password": "123456",
+  "google": true
 }

@@ -41,3 +41,47 @@ export const createUser = async (req, res = response) => {
     })
   }
 }
+
+export const updateUser = async (req, res = response) => {
+  // TODO: Validate token
+
+  const uid = req.params.id
+
+  try {
+    const userFromDB = await User.findById(uid)
+    if (!userFromDB) {
+      return res.status(404).json({
+        ok: false,
+        message: 'User not found!'
+      })
+    }
+
+    const fields = req.body
+    if (userFromDB.email === req.body.email) {
+      delete fields.email
+    } else {
+      const emailExist = await User.findOne({ email: req.body.email })
+      if (emailExist) {
+        return res.status(400).json({
+          ok: false,
+          message: 'Email already exists!'
+        })
+      }
+    }
+    delete fields.password
+    delete fields.google
+
+    const updatedUser = await User.findByIdAndUpdate(uid, fields, { new: true })
+
+    res.json({
+      ok: true,
+      user: updatedUser
+    })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      ok: false,
+      message: 'Unexpected error, check logs'
+    })
+  }
+}
