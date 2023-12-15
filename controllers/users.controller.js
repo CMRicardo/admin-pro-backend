@@ -2,6 +2,7 @@ import { response } from 'express'
 import bcrypt from 'bcryptjs'
 
 import { User } from '../models/user.model.js'
+import { generateJWT } from '../helpers/jwt.js'
 
 export const getUsers = async (req, res) => {
   const users = await User.find({}, 'name email google role img')
@@ -26,11 +27,13 @@ export const createUser = async (req, res = response) => {
     // Encrypt password
     const salt = bcrypt.genSaltSync()
     user.password = bcrypt.hashSync(password, salt)
+    const token = await generateJWT(user.id)
 
     await user.save()
 
     res.json({
       ok: true,
+      token,
       user
     })
   } catch (error) {

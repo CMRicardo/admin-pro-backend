@@ -1,6 +1,7 @@
 import { request, response } from 'express'
 import bcrypt from 'bcryptjs'
 import { User } from '../models/user.model.js'
+import { generateJWT } from '../helpers/jwt.js'
 
 export const login = async (req = request, res = response) => {
   const { email, password } = req.body
@@ -22,8 +23,11 @@ export const login = async (req = request, res = response) => {
         message: 'Not valid credentials'
       })
     }
+    // JWT
+    const token = await generateJWT(userFromDB.id)
     res.json({
-      ok: true
+      ok: true,
+      token
     })
   } catch (error) {
     console.log(error)
