@@ -1,16 +1,22 @@
 import express from 'express'
 import cors from 'cors'
+import 'dotenv/config.js'
+
 import { dbConnection } from './database/config.js'
-import dotenv from 'dotenv'
-dotenv.config()
+import { usersRouter } from './routes/users.route.js'
 
 const app = express()
 app.use(cors())
 dbConnection()
 
 app.get('/', (req, res) => {
-  res.json({ message: '👋 Hello world!' })
+  res.json({
+    ok: true,
+    message: 'Hello world!'
+  })
 })
+
+app.use('/api/users', usersRouter)
 
 const PORT = process.env.PORT
 app.listen(PORT, () => {
