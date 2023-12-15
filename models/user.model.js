@@ -28,4 +28,10 @@ const UserSchema = Schema({
   }
 })
 
-export default model('User', UserSchema)
+UserSchema.method('toJSON', function () {
+  const { __v, _id, ...object } = this.toObject()
+  object.uid = _id
+  return object
+})
+
+export const User = model('User', UserSchema)

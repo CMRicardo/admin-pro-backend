@@ -7,6 +7,7 @@ import { usersRouter } from './routes/users.route.js'
 
 const app = express()
 app.use(cors())
+app.use(express.json())
 dbConnection()
 
 app.get('/', (req, res) => {
