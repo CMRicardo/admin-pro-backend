@@ -1,4 +1,5 @@
 import { response } from 'express'
+import bcrypt from 'bcryptjs'
 
 import { User } from '../models/user.model.js'
 
@@ -11,9 +12,7 @@ export const getUsers = async (req, res) => {
 }
 
 export const createUser = async (req, res = response) => {
-  const { name, email, password } = req.body
-
-  const user = new User(req.body)
+  const { email, password } = req.body
 
   try {
     const emailExist = await User.findOne({ email })
@@ -23,6 +22,11 @@ export const createUser = async (req, res = response) => {
         message: 'Email already exists!'
       })
     }
+    const user = new User(req.body)
+    // Encrypt password
+    const salt = bcrypt.genSaltSync()
+    user.password = bcrypt.hashSync(password, salt)
+
     await user.save()
 
     res.json({
