@@ -4,7 +4,7 @@ import { check } from 'express-validator'
 import { createUser, deleteUser, getUsers, updateUser } from '../controllers/users.controller.js'
 import { validateFields } from '../middlewares/validate-fields.js'
 
-export const usersRouter = new Router()
+export const usersRouter = Router()
 
 usersRouter.get('/', getUsers)
 usersRouter.post(

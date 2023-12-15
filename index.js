@@ -3,7 +3,9 @@ import cors from 'cors'
 import 'dotenv/config.js'
 
 import { dbConnection } from './database/config.js'
+
 import { usersRouter } from './routes/users.route.js'
+import { authRouter } from './routes/auth.route.js'
 
 const app = express()
 app.use(cors())
@@ -18,6 +20,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/users', usersRouter)
+app.use('/api/auth', authRouter)
 
 const PORT = process.env.PORT
 app.listen(PORT, () => {
