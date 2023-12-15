@@ -81,3 +81,29 @@ export const updateUser = async (req, res = response) => {
     })
   }
 }
+
+export const deleteUser = async (req, res = response) => {
+  const uid = req.params.id
+
+  try {
+    const userFromDB = await User.findById(uid)
+    if (!userFromDB) {
+      return res.status(404).json({
+        ok: false,
+        message: 'User not found!'
+      })
+    }
+
+    await User.findByIdAndDelete(uid)
+    res.json({
+      ok: true,
+      message: 'User deleted'
+    })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      ok: false,
+      message: 'Unexpected error, check logs'
+    })
+  }
+}
