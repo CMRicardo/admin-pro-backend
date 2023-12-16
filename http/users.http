@@ -1,7 +1,7 @@
 GET http://localhost:3000
 ### Get users
 GET http://localhost:3000/api/users
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDI2Nzg2MzEsImV4cCI6MTcwMjcyMTgzMX0.zztjLA4ml26G4jqsk4lkH5NJMP3g3ObDRjdy3yQ3lVQ
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDI3NDAzMzIsImV4cCI6MTcwMjc4MzUzMn0.2ujVabRPSHBHZf49Cv4ALMdOj7Euv4-IC9IfiqLrCxc
 
 ### Create user
 POST http://localhost:3000/api/users
@@ -25,6 +25,5 @@ Content-Type: application/json
   "google": true
 }
 ### Delete user
-DELETE http://localhost:3000/api/users/657cbe3a5fb22a927dfb0238
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDI2Nzg2MzEsImV4cCI6MTcwMjcyMTgzMX0.zztjLA4ml26G4jqsk4lkH5NJMP3g3ObDRjdy3yQ3lVQ
-ff
+DELETE http://localhost:3000/api/users/657ccc508f7f356d9f7a9342
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDI3NDAzMzIsImV4cCI6MTcwMjc4MzUzMn0.2ujVabRPSHBHZf49Cv4ALMdOj7Euv4-IC9IfiqLrCxc

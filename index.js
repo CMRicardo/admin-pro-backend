@@ -6,6 +6,8 @@ import { dbConnection } from './database/config.js'
 
 import { usersRouter } from './routes/users.route.js'
 import { authRouter } from './routes/auth.route.js'
+import { hospitalsRouter } from './routes/hospitals.route.js'
+import { doctorsRouter } from './routes/doctors.route.js'
 
 const app = express()
 app.use(cors())
@@ -20,6 +22,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/users', usersRouter)
+app.use('/api/hospitals', hospitalsRouter)
+app.use('/api/doctors', doctorsRouter)
 app.use('/api/auth', authRouter)
 
 const PORT = process.env.PORT

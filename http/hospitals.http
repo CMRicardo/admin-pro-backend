@@ -1,0 +1,8 @@
+### Get Hospitals
+GET http://localhost:3000/api/hospitals
+### Create Hospitals
+POST http://localhost:3000/api/hospitals
+### Update Hospitals
+PUT http://localhost:3000/api/hospitals/1
+### Delete Hospitals
+DELETE http://localhost:3000/api/hospitals/1

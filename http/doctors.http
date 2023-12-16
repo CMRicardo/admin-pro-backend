@@ -1,0 +1,8 @@
+### Get doctors
+GET http://localhost:3000/api/doctors
+### Create doctors
+POST http://localhost:3000/api/doctors
+### Update doctors
+PUT http://localhost:3000/api/doctors/1
+### Delete doctors
+DELETE http://localhost:3000/api/doctors/1
