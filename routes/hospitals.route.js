@@ -7,7 +7,7 @@ import { validateFields } from '../middlewares/validate-fields.js'
 
 export const hospitalsRouter = Router()
 
-hospitalsRouter.get('/', getHospitals)
+hospitalsRouter.get('/', validateJWT, getHospitals)
 hospitalsRouter.post(
   '/',
   [

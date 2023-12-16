@@ -2,9 +2,14 @@ import { request, response } from 'express'
 import { Doctor } from '../models/doctor.model.js'
 
 export const getDoctors = async (req = request, res = response) => {
+  const doctors = await Doctor
+    .find()
+    .populate('user', 'name img')
+    .populate('hospital', 'name img')
+
   return res.json({
     ok: true,
-    message: 'GET Doctors'
+    doctors
   })
 }
 
