@@ -2,6 +2,13 @@
 GET http://localhost:3000/api/doctors
 ### Create doctors
 POST http://localhost:3000/api/doctors
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDI3NDAzMzIsImV4cCI6MTcwMjc4MzUzMn0.2ujVabRPSHBHZf49Cv4ALMdOj7Euv4-IC9IfiqLrCxc
+Content-Type: application/json
+
+{
+  "name": "Daniel",
+  "hospital": "657dce6659983f3e7c4a5ed3"
+}
 ### Update doctors
 PUT http://localhost:3000/api/doctors/1
 ### Delete doctors

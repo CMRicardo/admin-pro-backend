@@ -2,6 +2,12 @@
 GET http://localhost:3000/api/hospitals
 ### Create Hospitals
 POST http://localhost:3000/api/hospitals
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDI3NDAzMzIsImV4cCI6MTcwMjc4MzUzMn0.2ujVabRPSHBHZf49Cv4ALMdOj7Euv4-IC9IfiqLrCxc
+Content-Type: application/json
+
+{
+  "name": "Hospital escuela"
+}
 ### Update Hospitals
 PUT http://localhost:3000/api/hospitals/1
 ### Delete Hospitals
