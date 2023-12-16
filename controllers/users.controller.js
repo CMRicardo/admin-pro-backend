@@ -1,15 +1,24 @@
-import { response } from 'express'
+import { request, response } from 'express'
 import bcrypt from 'bcryptjs'
 
 import { User } from '../models/user.model.js'
 import { generateJWT } from '../helpers/jwt.js'
 
-export const getUsers = async (req, res) => {
-  const users = await User.find({}, 'name email google role img')
+export const getUsers = async (req = request, res = response) => {
+  const from = Number(req.query.from) || 0
+
+  const [users, total] = await Promise.all([
+    await User
+      .find({}, 'name email google role img')
+      .skip(from)
+      .limit(5),
+    await User.countDocuments()
+  ])
+
   res.json({
     ok: true,
     users,
-    uid: req.uid
+    total
   })
 }
 

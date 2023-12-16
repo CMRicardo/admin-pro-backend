@@ -1,6 +1,6 @@
 GET http://localhost:3000
 ### Get users
-GET http://localhost:3000/api/users
+GET http://localhost:3000/api/users?from=0
 x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDI3NDAzMzIsImV4cCI6MTcwMjc4MzUzMn0.2ujVabRPSHBHZf49Cv4ALMdOj7Euv4-IC9IfiqLrCxc
 
 ### Create user
@@ -8,8 +8,8 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-  "name": "daniel",
-  "email": "daniel@email.com",
+  "name": "test15",
+  "email": "test15@email.com",
   "password": "123456"
 }
 ### Update user
