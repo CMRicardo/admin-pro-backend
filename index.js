@@ -9,6 +9,7 @@ import { authRouter } from './routes/auth.route.js'
 import { hospitalsRouter } from './routes/hospitals.route.js'
 import { doctorsRouter } from './routes/doctors.route.js'
 import { searchRouter } from './routes/search.route.js'
+import { uploadsRouter } from './routes/uploads.route.js'
 
 const app = express()
 app.use(cors())
@@ -22,11 +23,12 @@ app.get('/', (req, res) => {
   })
 })
 
-app.use('/api/users', usersRouter)
-app.use('/api/hospitals', hospitalsRouter)
-app.use('/api/doctors', doctorsRouter)
 app.use('/api/all', searchRouter)
 app.use('/api/auth', authRouter)
+app.use('/api/doctors', doctorsRouter)
+app.use('/api/hospitals', hospitalsRouter)
+app.use('/api/uploads', uploadsRouter)
+app.use('/api/users', usersRouter)
 
 const PORT = process.env.PORT
 app.listen(PORT, () => {

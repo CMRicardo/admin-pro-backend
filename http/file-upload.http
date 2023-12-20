@@ -1,0 +1,3 @@
+# Add image to user
+PUT http://localhost:3000/api/uploads/users/657dd90fd38fcf31db02f567
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDMxMDE4NTcsImV4cCI6MTcwMzE0NTA1N30.zc23_mC0TWJupQAiq8F_bGE1gjpDp0D2ClsDBILDoKM
