@@ -1,6 +1,7 @@
 import { request, response } from 'express'
+import { updateImage } from '../helpers/update-image.js'
 
-export const fileUpload = (req = request, res = response) => {
+export const fileUpload = async (req = request, res = response) => {
   const { category, id } = req.params
 
   const validCategories = ['hospitals', 'doctors', 'users']
@@ -39,11 +40,11 @@ export const fileUpload = (req = request, res = response) => {
         message: 'Error saving image'
       })
     }
-
-    return res.json({
-      ok: true,
-      message: 'File uploaded!',
-      fileName
-    })
+  })
+  await updateImage({ category, fileName, id })
+  return res.json({
+    ok: true,
+    message: 'File uploaded!',
+    fileName
   })
 }
