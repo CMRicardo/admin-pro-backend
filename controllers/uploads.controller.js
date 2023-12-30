@@ -1,10 +1,16 @@
+import path from 'node:path'
+
 import { request, response } from 'express'
+
 import { updateImage } from '../helpers/update-image.js'
+import { __dirname } from '../helpers/dirname-filename.js'
+import { existsSync } from 'node:fs'
+
+const validCategories = ['hospitals', 'doctors', 'users']
 
 export const fileUpload = async (req = request, res = response) => {
   const { category, id } = req.params
 
-  const validCategories = ['hospitals', 'doctors', 'users']
   if (!validCategories.includes(category)) {
     return res.status(400).json({
       ok: false,
@@ -47,4 +53,20 @@ export const fileUpload = async (req = request, res = response) => {
     message: 'File uploaded!',
     fileName
   })
+}
+
+export const getImage = async (req = request, res = response) => {
+  const { category, image } = req.params
+
+  if (!validCategories.includes(category)) {
+    return res.status(400).json({
+      ok: false,
+      message: 'Category is not hospitals | doctors | users'
+    })
+  }
+  let imagePath = path.join(__dirname, `../uploads/${category}/${image}`)
+  if (!existsSync(imagePath)) {
+    imagePath = path.join(__dirname, '../uploads/no-image.jpeg')
+  }
+  return res.sendFile(imagePath)
 }

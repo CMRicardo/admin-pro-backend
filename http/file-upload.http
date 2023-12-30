@@ -1,3 +1,16 @@
 # Add image to user
 PUT http://localhost:3000/api/uploads/users/657dd90fd38fcf31db02f567
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDMxMDE4NTcsImV4cCI6MTcwMzE0NTA1N30.zc23_mC0TWJupQAiq8F_bGE1gjpDp0D2ClsDBILDoKM
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDM3ODk3MzcsImV4cCI6MTcwMzgzMjkzN30.vao3K8xYx9nNR7NKTnMnvIqiB5py7I3L041aHHwX-c4
+
+###
+# Get user image - api/uploads/{category}/{imageName}
+GET http://localhost:3000/api/uploads/users/39271a69-b71c-44fc-b616-dcb25bcc1ed8.jpg
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDM4OTUzNTIsImV4cCI6MTcwMzkzODU1Mn0.7YgvUVBTPQmCWELpT0dkz-Hyfe_w2NjGc55yhS4sHyw
+###
+# Get hospital image - api/uploads/{category}/{imageName}
+GET http://localhost:3000/api/uploads/hospitals/8729ed72-e3e0-4947-9361-bffdfedba5d9.jpg
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDM4OTUzNTIsImV4cCI6MTcwMzkzODU1Mn0.7YgvUVBTPQmCWELpT0dkz-Hyfe_w2NjGc55yhS4sHyw
+###
+# Get doctor image
+GET http://localhost:3000/api/uploads/doctors/e3699437-efee-406f-aa06-a3f340b7f734.jpg
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDM4OTUzNTIsImV4cCI6MTcwMzkzODU1Mn0.7YgvUVBTPQmCWELpT0dkz-Hyfe_w2NjGc55yhS4sHyw
