@@ -13,15 +13,11 @@ import { uploadsRouter } from './routes/uploads.route.js'
 
 const app = express()
 app.use(cors())
+// Public directory
+app.use(express.static('public'))
+
 app.use(express.json())
 dbConnection()
-
-app.get('/', (req, res) => {
-  res.json({
-    ok: true,
-    message: 'Hello world!'
-  })
-})
 
 app.use('/api/all', searchRouter)
 app.use('/api/auth', authRouter)

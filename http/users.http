@@ -1,7 +1,8 @@
 GET http://localhost:3000
 ### Get users
-GET http://localhost:3000/api/users?from=0
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDM3ODk3MzcsImV4cCI6MTcwMzgzMjkzN30.vao3K8xYx9nNR7NKTnMnvIqiB5py7I3L041aHHwX-c4
+GET http://localhost:3000/api/users?from=15
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDM4OTUzNTIsImV4cCI6MTcwMzkzODU1Mn0.7YgvUVBTPQmCWELpT0dkz-Hyfe_w2NjGc55yhS4sHyw
+
 
 ### Create user
 POST http://localhost:3000/api/users

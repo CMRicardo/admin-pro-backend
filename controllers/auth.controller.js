@@ -1,7 +1,9 @@
 import { request, response } from 'express'
 import bcrypt from 'bcryptjs'
+
 import { User } from '../models/user.model.js'
 import { generateJWT } from '../helpers/jwt.js'
+import { googleVerify } from '../helpers/google-verify.js'
 
 export const login = async (req = request, res = response) => {
   const { email, password } = req.body
@@ -34,6 +36,36 @@ export const login = async (req = request, res = response) => {
     res.status(500).json({
       ok: false,
       message: 'Unexpected error, check logs'
+    })
+  }
+}
+
+export const googleSignIn = async (req = request, res = response) => {
+  try {
+    const { name, email, picture } = await googleVerify(req.body.token)
+    const userFromDB = await User.findOne({ email })
+    let user
+    if (!userFromDB) {
+      user = new User({ name, email, img: picture, password: '@@@', google: true })
+    } else {
+      user = userFromDB
+      user.google = true
+    }
+    await user.save()
+    const token = await generateJWT(user.id)
+
+    return res.json({
+      ok: true,
+      name,
+      email,
+      picture,
+      token
+    })
+  } catch (error) {
+    console.log(error)
+    return res.status(400).json({
+      ok: false,
+      message: 'Wrong google token'
     })
   }
 }
