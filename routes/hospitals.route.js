@@ -19,7 +19,11 @@ hospitalsRouter.post(
 )
 hospitalsRouter.put(
   '/:id',
-  [],
+  [
+    validateJWT,
+    check('name', 'Name is required').notEmpty(),
+    validateFields
+  ],
   updateHospital
 )
 hospitalsRouter.delete('/:id', [], deleteHospital)

@@ -31,10 +31,34 @@ export const createHospital = async (req = request, res = response) => {
 }
 
 export const updateHospital = async (req = request, res = response) => {
-  return res.json({
-    ok: true,
-    message: 'PUT Hospitals'
-  })
+  try {
+    const { id } = req.params
+    const { uid } = req
+    const hospital = Hospital.findById(id)
+    if (!hospital) {
+      return res.status(404).json({
+        ok: false,
+        message: 'Hospital with that id not found'
+      })
+    }
+
+    const newHospitalData = {
+      ...req.body,
+      user: uid
+    }
+    const updatedHospital = await Hospital.findByIdAndUpdate(id, newHospitalData, { new: true })
+
+    return res.json({
+      ok: true,
+      updatedHospital
+    })
+  } catch (error) {
+    console.log(error)
+    return res.status(500).json({
+      ok: false,
+      message: 'Unexpected error!'
+    })
+  }
 }
 
 export const deleteHospital = async (req = request, res = response) => {
