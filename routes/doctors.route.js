@@ -20,7 +20,12 @@ doctorsRouter.post(
 )
 doctorsRouter.put(
   '/:id',
-  [],
+  [
+    validateJWT,
+    check('name', 'Name is required').notEmpty(),
+    check('hospital', 'Hospital id is required').notEmpty().isMongoId(),
+    validateFields
+  ],
   updateDoctors
 )
 doctorsRouter.delete('/:id', [], deleteDoctors)

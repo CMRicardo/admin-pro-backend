@@ -32,14 +32,55 @@ export const createDoctors = async (req = request, res = response) => {
   }
 }
 export const updateDoctors = async (req = request, res = response) => {
-  return res.json({
-    ok: true,
-    message: 'PUT Doctors'
-  })
+  try {
+    const { id } = req.params
+    const { uid } = req
+    const doctor = await Doctor.findById(id)
+    if (!doctor) {
+      return res.status(404).json({
+        ok: false,
+        message: 'A doctor with that id was not found'
+      })
+    }
+    const newDoctorData = {
+      ...req.body,
+      user: uid
+    }
+    const updatedDoctor = await Doctor.findByIdAndUpdate(id, newDoctorData, { new: true })
+
+    return res.json({
+      ok: true,
+      doctor: updatedDoctor
+    })
+  } catch (error) {
+    console.log(error)
+    return res.json({
+      ok: false,
+      message: 'Unexpected error'
+    })
+  }
 }
 export const deleteDoctors = async (req = request, res = response) => {
-  return res.json({
-    ok: true,
-    message: 'DELETE Doctors'
-  })
+  try {
+    const { id } = req.params
+    const doctor = await Doctor.findById(id)
+    if (!doctor) {
+      return res.status(404).json({
+        ok: false,
+        message: 'A doctor with that id was not found'
+      })
+    }
+    await Doctor.findByIdAndDelete(id)
+
+    return res.json({
+      ok: true,
+      message: 'Doctor deleted succesfully'
+    })
+  } catch (error) {
+    console.log(error)
+    return res.json({
+      ok: false,
+      message: 'Unexpected error'
+    })
+  }
 }
