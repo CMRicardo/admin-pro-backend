@@ -3,11 +3,11 @@ GET http://localhost:3000/api/hospitals
 x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTllZWJkY2I1NDFjZDE1NDI2Y2FhMGIiLCJpYXQiOjE3MDQ5MTM4ODQsImV4cCI6MTcwNDk1NzA4NH0.R4uU2qs5r05ZAcePW4V2dRRAVCG8D-fKFQEcyrBmKH4
 ### Create Hospitals
 POST http://localhost:3000/api/hospitals
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDI3NDAzMzIsImV4cCI6MTcwMjc4MzUzMn0.2ujVabRPSHBHZf49Cv4ALMdOj7Euv4-IC9IfiqLrCxc
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDQ5MTU5NjcsImV4cCI6MTcwNDk1OTE2N30.8QGm4uU7r7HWPOO0rYNawyKUl5Eljn5ynRV1Iva_Kt4
 Content-Type: application/json
 
 {
-  "name": "Hospital escuela"
+  "name": "Hospital del Valle"
 }
 ### Update hospital
 PUT http://localhost:3000/api/hospitals/657dce6659983f3e7c4a5ed3
@@ -18,4 +18,5 @@ Content-Type: application/json
   "name": "Hospital del Valle!!!"
 }
 ### Delete Hospitals
-DELETE http://localhost:3000/api/hospitals/1
+DELETE http://localhost:3000/api/hospitals/659ef3d94cbaef15c7897555
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTllZWJkY2I1NDFjZDE1NDI2Y2FhMGIiLCJpYXQiOjE3MDQ5MTM4ODQsImV4cCI6MTcwNDk1NzA4NH0.R4uU2qs5r05ZAcePW4V2dRRAVCG8D-fKFQEcyrBmKH4

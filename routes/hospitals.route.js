@@ -26,4 +26,10 @@ hospitalsRouter.put(
   ],
   updateHospital
 )
-hospitalsRouter.delete('/:id', [], deleteHospital)
+hospitalsRouter.delete(
+  '/:id',
+  [
+    validateJWT
+  ],
+  deleteHospital
+)
