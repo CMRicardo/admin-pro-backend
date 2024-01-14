@@ -14,3 +14,8 @@ Content-Type: application/json
 {
   "token": "ABC"
 }
+
+###
+# Renew token
+GET http://localhost:3000/api/auth/renew
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDUyNzMyNjEsImV4cCI6MTcwNTMxNjQ2MX0.0KPPYmXml3ldR8mNuZcF-t1kXWrDG8CjjBEfzisNS8E
