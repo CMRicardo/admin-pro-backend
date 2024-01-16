@@ -72,12 +72,19 @@ export const googleSignIn = async (req = request, res = response) => {
 
 export const renewToken = async (req, res = response) => {
   const uid = req.uid
+  const user = await User.findById(uid)
+  if (!user) {
+    return res.status(404).json({
+      ok: false,
+      message: 'Could not find a user with that id'
+    })
+  }
 
-  // Generar el TOKEN - JWT
   const token = await generateJWT(uid)
 
-  res.json({
+  return res.json({
     ok: true,
-    token
+    token,
+    user
   })
 }
