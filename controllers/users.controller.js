@@ -56,8 +56,6 @@ export const createUser = async (req, res = response) => {
 }
 
 export const updateUser = async (req, res = response) => {
-  // TODO: Validate token
-
   const uid = req.params.id
 
   try {
@@ -78,6 +76,12 @@ export const updateUser = async (req, res = response) => {
           message: 'Email already exists!'
         })
       }
+    }
+    if (userFromDB.google) {
+      return res.status(400).json({
+        ok: false,
+        message: "Can't change an email from google!"
+      })
     }
     fields.email = email
     const updatedUser = await User.findByIdAndUpdate(uid, fields, { new: true })
