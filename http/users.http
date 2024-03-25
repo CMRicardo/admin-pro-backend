@@ -1,7 +1,7 @@
 GET http://localhost:3000
 ### Get users
 GET http://localhost:3000/api/users?from=0
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTllZWJkY2I1NDFjZDE1NDI2Y2FhMGIiLCJpYXQiOjE3MDQ5MTM4ODQsImV4cCI6MTcwNDk1NzA4NH0.R4uU2qs5r05ZAcePW4V2dRRAVCG8D-fKFQEcyrBmKH4
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDkyNDQzNTMsImV4cCI6MTcwOTI4NzU1M30.08kOosTZW8Ugi40t8P9692MeS6GC3SgFVuMycj7GbCo
 
 
 ### Create user
@@ -14,16 +14,16 @@ Content-Type: application/json
   "password": "123456"
 }
 ### Update user
-PUT http://localhost:3000/api/users/657cb15d170bb16543f9ccb3
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDI2Nzg2MzEsImV4cCI6MTcwMjcyMTgzMX0.zztjLA4ml26G4jqsk4lkH5NJMP3g3ObDRjdy3yQ3lVQ
+PUT http://localhost:3000/api/users/657dd914d38fcf31db02f56a
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDkyNDQzNTMsImV4cCI6MTcwOTI4NzU1M30.08kOosTZW8Ugi40t8P9692MeS6GC3SgFVuMycj7GbCo
 Content-Type: application/json
 
 {
-  "name": "Ricardo Corrales",
-  "email": "ricardo@email.com",
+  "name": "test2",
+  "email": "test2@email.com",
   "password": "123456",
   "role": "USER_ROLE",
-  "google": true
+  "google": false
 }
 ### Delete user
 DELETE http://localhost:3000/api/users/657ccc508f7f356d9f7a9342

@@ -1,14 +1,17 @@
 ### Get doctors
 GET http://localhost:3000/api/doctors
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDQ5MTU5NjcsImV4cCI6MTcwNDk1OTE2N30.8QGm4uU7r7HWPOO0rYNawyKUl5Eljn5ynRV1Iva_Kt4
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdkZDkxNGQzOGZjZjMxZGIwMmY1NmEiLCJpYXQiOjE3MTEzOTgwNjcsImV4cCI6MTcxMTQ0MTI2N30.nrsin9-Mw2ribIg3RASHTnRvhqzF0EN00G9HnTXyuCw
+### Get doctor by id
+GET http://localhost:3000/api/doctors/6601ddad6c8380b7017d3b5f
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdkZDkxNGQzOGZjZjMxZGIwMmY1NmEiLCJpYXQiOjE3MTEzOTgwNjcsImV4cCI6MTcxMTQ0MTI2N30.nrsin9-Mw2ribIg3RASHTnRvhqzF0EN00G9HnTXyuCw
 ### Create doctors
 POST http://localhost:3000/api/doctors
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdjYjE1ZDE3MGJiMTY1NDNmOWNjYjMiLCJpYXQiOjE3MDQ5MTU5NjcsImV4cCI6MTcwNDk1OTE2N30.8QGm4uU7r7HWPOO0rYNawyKUl5Eljn5ynRV1Iva_Kt4
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdkZDkxNGQzOGZjZjMxZGIwMmY1NmEiLCJpYXQiOjE3MTEzOTgwNjcsImV4cCI6MTcxMTQ0MTI2N30.nrsin9-Mw2ribIg3RASHTnRvhqzF0EN00G9HnTXyuCw
 Content-Type: application/json
 
 {
-  "name": "Ricardo",
-  "hospital": "657dceb759983f3e7c4a5ed7"
+  "name": "Daniel",
+  "hospital": "657dce9d59983f3e7c4a5ed5"
 }
 ### Update doctors
 PUT http://localhost:3000/api/doctors/657dd24765b197d8017940fe
@@ -20,4 +23,4 @@ Content-Type: application/json
   "hospital": "657dceb759983f3e7c4a5ed7"
 }
 ### Delete doctors
-DELETE http://localhost:3000/api/doctors/659ef6e735b70d2fe3c9e681
+DELETE http://localhost:3000/api/doctors/657dd24765b197d8017940fe

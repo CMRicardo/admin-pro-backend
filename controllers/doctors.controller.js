@@ -1,4 +1,5 @@
 import { request, response } from 'express'
+
 import { Doctor } from '../models/doctor.model.js'
 
 export const getDoctors = async (req = request, res = response) => {
@@ -11,6 +12,26 @@ export const getDoctors = async (req = request, res = response) => {
     ok: true,
     doctors
   })
+}
+
+export const getDoctorById = async (req = request, res = response) => {
+  const { id } = req.params
+  try {
+    const doctor = await Doctor
+      .findById(id)
+      .populate('user', 'name img')
+      .populate('hospital', 'name img')
+
+    return res.json({
+      ok: true,
+      doctor
+    })
+  } catch (error) {
+    return res.status(500).json({
+      ok: false,
+      message: 'Unexpected error'
+    })
+  }
 }
 
 export const createDoctors = async (req = request, res = response) => {

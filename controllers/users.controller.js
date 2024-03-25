@@ -68,6 +68,7 @@ export const updateUser = async (req, res = response) => {
     }
 
     const { password, google, email, ...fields } = req.body
+
     if (userFromDB.email !== email) {
       const emailExist = await User.findOne({ email })
       if (emailExist) {
@@ -77,13 +78,15 @@ export const updateUser = async (req, res = response) => {
         })
       }
     }
-    if (userFromDB.google) {
+
+    if (!userFromDB.google) {
+      fields.email = email
+    } else if (userFromDB.email !== email) {
       return res.status(400).json({
         ok: false,
         message: "Can't change an email from google!"
       })
     }
-    fields.email = email
     const updatedUser = await User.findByIdAndUpdate(uid, fields, { new: true })
 
     res.json({
