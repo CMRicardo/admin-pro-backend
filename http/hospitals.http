@@ -1,9 +1,9 @@
 ### Get Hospitals
 GET http://localhost:3000/api/hospitals
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdkZDkxNGQzOGZjZjMxZGIwMmY1NmEiLCJpYXQiOjE3MTEyMDU1NTksImV4cCI6MTcxMTI0ODc1OX0.q3P8Kc8K9FvZocDwhgsZzSrIJTkv-pGP4WecYVFGa88
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdkZDkxNGQzOGZjZjMxZGIwMmY1NmEiLCJpYXQiOjE3MTEzOTgwNjcsImV4cCI6MTcxMTQ0MTI2N30.nrsin9-Mw2ribIg3RASHTnRvhqzF0EN00G9HnTXyuCw
 ### Create Hospitals
 POST http://localhost:3000/api/hospitals
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdkZDkxNGQzOGZjZjMxZGIwMmY1NmEiLCJpYXQiOjE3MTEyMDU1NTksImV4cCI6MTcxMTI0ODc1OX0.q3P8Kc8K9FvZocDwhgsZzSrIJTkv-pGP4WecYVFGa88
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdkZDkxNGQzOGZjZjMxZGIwMmY1NmEiLCJpYXQiOjE3MTEzOTgwNjcsImV4cCI6MTcxMTQ0MTI2N30.nrsin9-Mw2ribIg3RASHTnRvhqzF0EN00G9HnTXyuCw
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 ### Update hospital
 PUT http://localhost:3000/api/hospitals/657dce6659983f3e7c4a5ed3
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdkZDkxNGQzOGZjZjMxZGIwMmY1NmEiLCJpYXQiOjE3MTEyMDU1NTksImV4cCI6MTcxMTI0ODc1OX0.q3P8Kc8K9FvZocDwhgsZzSrIJTkv-pGP4WecYVFGa88
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdkZDkxNGQzOGZjZjMxZGIwMmY1NmEiLCJpYXQiOjE3MTEzOTgwNjcsImV4cCI6MTcxMTQ0MTI2N30.nrsin9-Mw2ribIg3RASHTnRvhqzF0EN00G9HnTXyuCw
 Content-Type: application/json
 
 {
@@ -19,4 +19,4 @@ Content-Type: application/json
 }
 ### Delete Hospitals
 DELETE http://localhost:3000/api/hospitals/659ef3d94cbaef15c7897555
-x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdkZDkxNGQzOGZjZjMxZGIwMmY1NmEiLCJpYXQiOjE3MTEyMDU1NTksImV4cCI6MTcxMTI0ODc1OX0.q3P8Kc8K9FvZocDwhgsZzSrIJTkv-pGP4WecYVFGa88
+x-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTdkZDkxNGQzOGZjZjMxZGIwMmY1NmEiLCJpYXQiOjE3MTEzOTgwNjcsImV4cCI6MTcxMTQ0MTI2N30.nrsin9-Mw2ribIg3RASHTnRvhqzF0EN00G9HnTXyuCw

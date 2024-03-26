@@ -4,6 +4,7 @@ import bcrypt from 'bcryptjs'
 import { User } from '../models/user.model.js'
 import { generateJWT } from '../helpers/jwt.js'
 import { googleVerify } from '../helpers/google-verify.js'
+import { buildMenu } from '../helpers/menu-builder.js'
 
 export const login = async (req = request, res = response) => {
   const { email, password } = req.body
@@ -29,7 +30,8 @@ export const login = async (req = request, res = response) => {
     const token = await generateJWT(userFromDB.id)
     res.json({
       ok: true,
-      token
+      token,
+      menu: buildMenu(userFromDB.role)
     })
   } catch (error) {
     console.log(error)
@@ -59,7 +61,8 @@ export const googleSignIn = async (req = request, res = response) => {
       name,
       email,
       picture,
-      token
+      token,
+      menu: buildMenu(user.role)
     })
   } catch (error) {
     console.log(error)
@@ -85,6 +88,7 @@ export const renewToken = async (req, res = response) => {
   return res.json({
     ok: true,
     token,
-    user
+    user,
+    menu: buildMenu(user.role)
   })
 }
