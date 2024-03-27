@@ -48,3 +48,31 @@ export const validateAdminRole = async (req = request, res = response, next) => 
     })
   }
 }
+
+export const validateAdminRoleOrSameUser = async (req = request, res = response, next) => {
+  const uid = req.uid
+  const { id } = req.params
+  try {
+    const userFromDB = await User.findById(uid)
+    if (!userFromDB) {
+      return res.status(404).json({
+        ok: false,
+        message: 'User not found'
+      })
+    }
+    if (userFromDB.role === 'ADMIN_ROLE' && uid === id) {
+      next()
+    } else {
+      return res.status(403).json({
+        ok: false,
+        message: 'You must be an admin user'
+      })
+    }
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      ok: false,
+      message: 'Unexpected error'
+    })
+  }
+}
